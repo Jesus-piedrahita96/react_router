@@ -6,7 +6,7 @@ function Menu() {
     <nav>
       <ul>
         {routes.map(route => (
-          <li>
+          <li key={routes.indexOf(route)}>
             <NavLink
               style={({ isActive }) => ({
                 color: isActive ? 'red' : 'blue'
@@ -24,7 +24,7 @@ function Menu() {
 
 const routes = [
   { to: '/', text: 'Home' },
-  { to: '/page', text: 'Page' },
+  { to: '/blog', text: 'Page' },
   { to: '/profile', text: 'Profile' }
 ]
 

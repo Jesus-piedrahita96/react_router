@@ -5,6 +5,7 @@ import { Page } from './components/Page';
 import { Profile } from './components/Profile';
 import { Menu } from './components/Menu';
 import './css/App.css';
+import { BlogPost } from './components/BlogPost';
 
 function App() {
   return (
@@ -13,7 +14,11 @@ function App() {
         <Menu />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/blog' element={<Page />} />
+          {/* <Route path='/blog' element={<Page />} />
+          <Route path='/blog/:slug' element={<BlogPost/>} /> */}
+          <Route path='/blog' element={<Page />}>
+            <Route path=':slug' element={<BlogPost/>} />
+          </Route>
           <Route path='/profile' element={<Profile />} />
           <Route path='*' element={<p>no Found</p>} />
         </Routes>
