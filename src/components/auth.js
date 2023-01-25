@@ -11,7 +11,7 @@ const adminList = [ 'jesus', 'mauricio' ]
 function AuthProvaider(props) {
   const {
     statu,
-    // saveData
+    saveData
   } = useLocalStorage('DATA_V1', [])
 
   const navigate = useNavigate()
@@ -28,13 +28,26 @@ function AuthProvaider(props) {
     navigate('/')
   }
 
+  const creatNewData = (data) => {
+    const aux = [...statu.data]
+    aux.push({
+      title: data.title,
+      slug: data.slug,
+      content: data.content,
+      auth: data.auth
+    })
+    saveData(aux)
+  }
+
   const auth = { user, authLogin, authLogout }
+  const crud = {creatNewData}
 
   return (
     <AuthContext.Provider
       value={{
         auth,
-        statu
+        statu,
+        crud
       }}
     >
       {props.children}
@@ -52,6 +65,11 @@ function useDataJson() {
   return dataj.statu
 }
 
+function useCrud() {
+  const crud = React.useContext(AuthContext)
+  return crud.crud
+}
+
 function AuthRouter(props) {
   const auth = useAuth()
   if (!auth.user) {
@@ -66,4 +84,5 @@ export {
   AuthRouter,
   useAuth,
   useDataJson,
+  useCrud,
 }

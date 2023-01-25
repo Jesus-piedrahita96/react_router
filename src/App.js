@@ -9,6 +9,7 @@ import { Login } from './components/Login';
 import { Logout } from './components/Logout';
 import { AuthProvaider, AuthRouter } from './components/auth';
 import './css/App.css';
+import { PostView } from './components/PostView';
 
 function App() {
   return (
@@ -44,6 +45,14 @@ function App() {
               element={
                 <AuthRouter>
                   <Profile />
+                </AuthRouter>
+              }
+            />
+            <Route
+              path='/post'
+              element={
+                <AuthRouter>
+                  <PostView />
                 </AuthRouter>
               }
             />

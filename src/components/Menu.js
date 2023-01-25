@@ -47,7 +47,8 @@ const routes = [
   { to: '/blog', text: 'Page', private: true },
   { to: '/login', text: 'login', private: false },
   { to: '/logout', text: 'logout', private: true },
-  { to: '/profile', text: 'Profile', private: true }
+  { to: '/profile', text: 'Profile', private: true },
+  { to: '/post', text: 'post', private: true }
 ]
 
 export { Menu }

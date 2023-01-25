@@ -5,7 +5,7 @@ import { useDataJson } from "./auth";
 
 function Page() {
   const datos = useDataJson()
-  console.log(datos)
+
   return (
     <>
       <h2>Blog Page</h2>

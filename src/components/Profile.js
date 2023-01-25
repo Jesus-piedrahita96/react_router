@@ -7,7 +7,6 @@ function Profile() {
   return (
     <>
       <h1>Profile</h1>
-    {  console.log(auth.user)}
       <p>{`Welcome: ${auth.user.user}`}</p>
     </>
   )
