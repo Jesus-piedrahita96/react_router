@@ -1,13 +1,14 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { blogData } from "./Data";
-import { useAuth } from "./auth";
+import { useAuth, useDataJson } from "./auth";
 
 function BlogPost() {
+  const localStorageData = useDataJson()
   const auth = useAuth()
   const navegation = useNavigate()
   const {slug} = useParams()
-  const datos = blogData.find(data => data.slug === slug)
+  const datos = localStorageData.data.find(data => data.slug === slug)
   const canDelet = auth.user.isAdmin || datos.auth === auth.user.user
 
   function back() {

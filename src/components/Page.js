@@ -1,15 +1,17 @@
 import React from "react";
 import { BlogLink } from "./BlogLink";
-import { blogData } from './Data'
 import { Outlet } from "react-router-dom";
+import { useDataJson } from "./auth";
 
 function Page() {
+  const datos = useDataJson()
+  console.log(datos)
   return (
     <>
       <h2>Blog Page</h2>
       <ul>
-        {blogData.map(aux => (
-          <BlogLink key={blogData.indexOf(aux)} post={aux} />
+        {datos.data.map((aux, index) => (
+          <BlogLink key={index} post={aux} />
         ))}
       </ul>
       <Outlet />

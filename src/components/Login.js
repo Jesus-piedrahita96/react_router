@@ -1,9 +1,10 @@
 import React from "react";
-import { useAuth } from "./auth";
+import { useAuth, useDataJson } from "./auth";
 
 function Login() {
   //consumiendo variable global
   const auth = useAuth()
+  const localStorageData = useDataJson()
 
   //estado simple
   const [ state, setState ] = React.useState('')
