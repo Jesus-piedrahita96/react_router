@@ -10,6 +10,7 @@ import { Logout } from './components/Logout';
 import { AuthProvaider, AuthRouter } from './components/auth';
 import './css/App.css';
 import { PostView } from './components/PostView';
+import { Edit } from './components/Edit';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             >
               <Route path=':slug' element={<BlogPost/>} />
             </Route>
+            <Route path='/blog/post/edit/:dataRuta' element={<Edit />} />
             <Route path='/login' element={<Login />} />
             <Route
               path='/logout'

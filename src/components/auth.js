@@ -28,8 +28,9 @@ function AuthProvaider(props) {
     navigate('/')
   }
 
+  //Crear un nuevo post
   const creatNewData = (data) => {
-    const aux = [...statu.data]
+    const aux = [ ...statu.data ]
     aux.push({
       title: data.title,
       slug: data.slug,
@@ -39,8 +40,36 @@ function AuthProvaider(props) {
     saveData(aux)
   }
 
+  //Eliminar un post
+  const deleteData = (slug) => {
+    const indice = statu.data.findIndex(dato => dato.slug === slug)
+    const aux = [ ...statu.data ]
+    if (aux[ indice ].auth === user.user || user.isAdmin) {
+      aux.splice(indice, 1)
+      saveData(aux)
+      alert('Datos eliminados correctamente')
+      navigate('/blog')
+    } else {
+      alert('Error al eliminar los datos...')
+    }
+  }
+
+  //Update data
+  const editData = (datosNuevos) => {
+    const index = statu.data.findIndex(data => data.slug === datosNuevos.slug)
+    const aux = [...statu.data]
+    if (aux[index]) {
+      aux[index].title = datosNuevos.title
+      aux[index].content = datosNuevos.content
+      saveData(aux)
+      alert('Datos midificado con exito')
+    }else{
+      alert('Error al intentar modificar los datos')
+    }
+  }
+
   const auth = { user, authLogin, authLogout }
-  const crud = {creatNewData}
+  const crud = { creatNewData, deleteData, editData }
 
   return (
     <AuthContext.Provider
