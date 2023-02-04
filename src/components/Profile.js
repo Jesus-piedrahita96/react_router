@@ -6,8 +6,13 @@ function Profile() {
 
   return (
     <>
-      <h1>Profile</h1>
-      <p>{`Welcome: ${auth.user.user}`}</p>
+      <div className="contain-profile">
+        <div className="contain-profile__image"></div>
+        <div className="contain-profile__header">
+          <h1>Profile</h1>
+          <p><strong>Welcome: </strong>{auth.user.user}</p>
+        </div>
+      </div>
     </>
   )
 }

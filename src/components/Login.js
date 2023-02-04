@@ -23,17 +23,25 @@ function Login() {
 
   return (
     <>
-      <form onSubmit={enviar}>
-        <h2>Login</h2>
-        <label htmlFor="pass">Password</label>
-        <input
-          id="pass"
-          value={state}
-          onChange={cambiar}
-          placeholder="dijite el password"
-        />
-        <button type="submit">Entrar</button>
-      </form>
+      <div className="contain-login">
+        <div className="contain-login__image"></div>
+        <form
+          className="contain-login__form"
+          onSubmit={enviar}>
+          <h1>Login</h1>
+          <label htmlFor="pass">Password</label>
+          <div className="contain-login__form-sub">
+            <input
+              id="pass"
+              className="effect"
+              value={state}
+              onChange={cambiar}
+              placeholder="dijite el password"
+            />
+            <button className="effect" type="submit">Entrar</button>
+          </div>
+        </form>
+      </div>
     </>
   )
 }

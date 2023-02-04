@@ -1,8 +1,11 @@
 import React from "react";
+import '../css/global.css';
 
 function Home() {
   return (
-    <p>Home</p>
+    <>
+      <div className="contain-home"></div>
+    </>
   )
 }
 

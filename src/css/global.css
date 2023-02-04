@@ -1,0 +1,111 @@
+@import './index.css';
+
+.contain-home {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  padding-top: 30px;
+  background-image: url(../assets/images/undraw_Login_re_4vu2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contain-login {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.contain-login__image {
+  width: 500px;
+  height: 500px;
+  background-image: url(../assets/images/undraw_Creation_re_d1mi.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contain-login__form {
+  display: grid;
+  grid-auto-rows: 60px;
+  height: 35vh;
+  padding: 0 24px;
+}
+
+.contain-login__form-sub {
+  display: grid;
+  gap: 15px;
+}
+
+.contain-login__form-sub input:focus {
+  outline: none;
+}
+
+.contain-login__form-sub button:hover {
+  background-color: rgb(154, 154, 248);
+  color: white;
+}
+
+.contain-login__form-sub button:active {
+  background-color: blue;
+  color: white;
+}
+
+.effect {
+  border: none;
+  border-radius: 10px;
+}
+
+.contain-profile {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  place-items: center;
+  height: 85vh;
+}
+
+.contain-profile__image {
+  width: 500px;
+  height: 500px;
+  background-image: url(../assets/images/undraw_Creation_re_d1mi.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contain-profile__header {
+  justify-self: start;
+}
+
+@media(max-width: 500px) {
+  .contain-home {
+    width: 300px;
+    height: 300px;
+  }
+
+  .contain-login {
+    height: 60vh;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contain-login__image {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  .contain-profile {
+    grid-template-columns: auto 1fr;
+  }
+
+  .contain-profile__image {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  .contain-profile__header {
+    justify-self: center;
+  }
+}

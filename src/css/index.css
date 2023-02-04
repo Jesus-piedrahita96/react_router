@@ -1,3 +1,10 @@
+:root {
+  --menu-color: whitesmoke;
+  --menu-sombra:  20px 20px 60px #95c5e5,
+                -20px -20px 60px #c3f6ff;
+
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
