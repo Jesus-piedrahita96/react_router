@@ -1,0 +1,63 @@
+@import './index.css';
+
+.container-logout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+.container-logout__image {
+  width: 500px;
+  height: 500px;
+  background-image: url(../assets/images/undraw_Authentication_re_svpt.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container-logout__header h1 {
+  margin-bottom: 0;
+}
+
+.container-logout__header p {
+  margin-top: 0;
+  margin-bottom: 35px;
+  color: gray;
+}
+
+.container-logout__header button {
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px;
+}
+
+.container-logout__header button:hover {
+  background-color: var(--hover-button);
+  color: white;
+}
+
+.container-logout__header button:active {
+  background-color: var(--active-button);
+  color: white;
+}
+
+@media (max-width:500px) {
+  .container-logout {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    height: 35vh;
+    margin-top: 100px;
+  }
+
+  .container-logout__image {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .container-logout__header {
+    height: 70vh;
+    justify-self: center;
+  }
+}
+
