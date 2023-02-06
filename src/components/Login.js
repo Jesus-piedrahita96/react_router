@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth, useDataJson } from "./auth";
+import '../css/global.css'
 
 function Login() {
   //consumiendo variable global
@@ -38,7 +39,7 @@ function Login() {
               onChange={cambiar}
               placeholder="dijite el password"
             />
-            <button className="effect" type="submit">Entrar</button>
+            <button className="effect primary" type="submit">Entrar</button>
           </div>
         </form>
       </div>

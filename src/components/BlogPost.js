@@ -34,18 +34,18 @@ function BlogPost() {
         </div>
         <div className="container-blogPost__button">
           <button
-            className="container-blogPost__button-second"
+            className="effect second"
             onClick={back}
           >Volver</button>
           {canDeletEdit && (
             <button
-              className="container-blogPost__button-danger"
+              className="effect danger"
               onClick={deletePost}
             >Eliminar blogpost</button>
           )}
           {canDeletEdit && (
             <button
-              className="container-blogPost__button-primary"
+              className="effect primary"
               onClick={editPost}
             >Editar</button>
           )}

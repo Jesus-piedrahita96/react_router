@@ -22,17 +22,6 @@
   gap: 20px;
 }
 
-.contain-post__form-effect {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.13);
-  background-color: ghostwhite;
-}
-
-.contain-post__form-effect:focus {
-  outline: none;
-}
-
 .contain-post__form-buttom {
   border: none;
   border-radius: 10px;

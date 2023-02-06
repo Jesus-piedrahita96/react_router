@@ -15,7 +15,7 @@ function Logout() {
         <div className="container-logout__header">
           <h1>Logout</h1>
           <p>Seguro que desea salir</p>
-          <button onClick={back}>Salir</button>
+          <button className="effect primary" onClick={back}>Salir</button>
         </div>
       </div>
     </>

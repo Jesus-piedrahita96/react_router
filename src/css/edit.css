@@ -20,38 +20,3 @@
   display: grid;
   gap: 20px;
 }
-
-.effecto-edit {
-  border: none;
-  border-radius: 10px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.13);
-}
-
-.effecto-edit:focus {
-  outline: none;
-}
-
-.container-edit__form button {
-  padding: 10px;
-}
-
-.container-edit__form-primary:hover {
-  background-color: var(--hover-button);
-  color: white;
-}
-
-.container-edit__form-primary:active {
-  background-color: var(--active-button);
-  color: white;
-}
-
-.container-edit__form-second:hover {
-  background-color: var(--hover-second);
-  color: white;
-}
-
-.container-edit__form-second:active {
-  background-color: var(--active-second);
-  color: white;
-}
-

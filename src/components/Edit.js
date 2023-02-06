@@ -32,24 +32,24 @@ function Edit() {
           onSubmit={editarDatos}
         >
           <input
-            className="effecto-edit"
+            className="effect"
             id="title"
             value={data.title}
             onChange={(event) => setData({ ...data, title: event.target.value })}
           />
           <textarea
-            className="effecto-edit"
+            className="effect"
             id="content"
             rows={10}
             value={data.content}
             onChange={(event) => setData({ ...data, content: event.target.value })}
           />
           <button
-            className="container-edit__form-primary effecto-edit"
+            className="effect primary"
             type="submit"
           >Editar</button>
           <button
-            className="container-edit__form-second effecto-edit"
+            className="effect second"
             onClick={() => navigate('/blog')}
           >Volver</button>
         </form>

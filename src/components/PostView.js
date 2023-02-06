@@ -30,7 +30,7 @@ function PostView() {
           <h1>Crear un nuevo blog page</h1>
           <form className="contain-post__form" onSubmit={onAdd}>
             <input
-              className="contain-post__form-effect"
+              className="effect"
               value={datos.title}
               onChange={(event) => {
                 setDatos({
@@ -40,7 +40,7 @@ function PostView() {
               }}
               placeholder="Titulo" />
             <input
-              className="contain-post__form-effect"
+              className="effect"
               value={datos.content}
               onChange={(event) => {
                 setDatos({
@@ -50,7 +50,7 @@ function PostView() {
               }}
               placeholder="Description" />
             <input
-              className="contain-post__form-effect"
+              className="effect"
               value={datos.slug}
               onChange={(event) => {
                 setDatos({
@@ -61,7 +61,7 @@ function PostView() {
               placeholder="Direccion del page" />
             <br />
             <button
-              className="contain-post__form-buttom"
+              className="effect primary"
               type="submit">Crear</button
             >
           </form>

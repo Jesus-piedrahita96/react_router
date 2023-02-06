@@ -55,6 +55,44 @@
   border: none;
   border-radius: 10px;
   padding: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.13);
+}
+
+.effect:focus {
+  outline: none;
+}
+
+.primary:hover {
+  background-color: var(--hover-button);
+  color: white;
+}
+
+.primary:active {
+  background-color: var(--active-button);
+  color: white;
+  box-shadow: none;
+}
+
+.second:hover {
+  background-color: var(--hover-second);
+  color: white;
+}
+
+.second:active {
+  background-color: var(--active-second);
+  color: white;
+  box-shadow: none;
+}
+
+.danger:hover {
+  background-color: var(--hover-danger);
+  color: white;
+}
+
+.danger:active {
+  background-color: var(--active-danger);
+  color: white;
+  box-shadow: none;
 }
 
 .contain-profile {

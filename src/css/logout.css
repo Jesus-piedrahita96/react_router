@@ -24,23 +24,6 @@
   color: gray;
 }
 
-.container-logout__header button {
-  border: none;
-  border-radius: 10px;
-  width: 200px;
-  padding: 10px;
-}
-
-.container-logout__header button:hover {
-  background-color: var(--hover-button);
-  color: white;
-}
-
-.container-logout__header button:active {
-  background-color: var(--active-button);
-  color: white;
-}
-
 @media (max-width:500px) {
   .container-logout {
     grid-template-columns: auto 1fr;
