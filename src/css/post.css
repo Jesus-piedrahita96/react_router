@@ -1,0 +1,57 @@
+@import './index.css';
+
+.contain {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.contain-post {
+  grid-area: 1/2/2/3;
+  display: inline-block;
+  margin: auto;
+}
+
+.contain-post h1 {
+  margin-bottom: 90px;
+  border-bottom: solid 1px;
+}
+
+.contain-post__form {
+  display: grid;
+  gap: 20px;
+}
+
+.contain-post__form-effect {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.13);
+  background-color: ghostwhite;
+}
+
+.contain-post__form-effect:focus {
+  outline: none;
+}
+
+.contain-post__form-buttom {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.contain-post__form-buttom:hover {
+  background-color: var(--hover-button);
+  color: white;
+}
+
+.contain-post__form-buttom:active {
+  background-color: var(--active-button);
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .contain-post h1{
+    font-size: 20px;
+  }
+}
+

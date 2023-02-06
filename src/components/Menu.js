@@ -32,7 +32,7 @@ function Menu() {
               <li key={routes.indexOf(route)}>
               <NavLink
                 style={({ isActive }) => ({
-                  color: isActive ? 'red' : 'blue'
+                  color: isActive ? 'blue' : 'black'
                 })}
                 to={route.to}
               >

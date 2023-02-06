@@ -1,0 +1,57 @@
+@import './index.css';
+
+.container-edit {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 90vh;
+  justify-items: center;
+}
+
+.container-edit__title {
+  grid-area: 1/2/2/3;
+  margin-top: 70px;
+  height: 8vh;
+  border-bottom: solid 1px rgb(228, 228, 228);
+}
+
+.container-edit__form {
+  grid-area: 1/2/2/3;
+  align-self: center;
+  display: grid;
+  gap: 20px;
+}
+
+.effecto-edit {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.13);
+}
+
+.effecto-edit:focus {
+  outline: none;
+}
+
+.container-edit__form button {
+  padding: 10px;
+}
+
+.container-edit__form-primary:hover {
+  background-color: var(--hover-button);
+  color: white;
+}
+
+.container-edit__form-primary:active {
+  background-color: var(--active-button);
+  color: white;
+}
+
+.container-edit__form-second:hover {
+  background-color: var(--hover-second);
+  color: white;
+}
+
+.container-edit__form-second:active {
+  background-color: var(--active-second);
+  color: white;
+}
+

@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCrud, useDataJson } from "./auth";
 
+import '../css/edit.css'
+
 function Edit() {
   const { dataRuta } = useParams()
   const localDataStorage = useDataJson()
@@ -23,24 +25,35 @@ function Edit() {
 
   return (
     <>
-      <h1>Editar datos</h1>
-      <form onSubmit={editarDatos}>
-        <label htmlFor="title">title</label>
-        <input
-          id="title"
-          value={data.title}
-          onChange={(event) => setData({ ...data, title: event.target.value })}
-        />
-        <br />
-        <label htmlFor="content">description</label>
-        <input
-          id="content"
-          value={data.content}
-          onChange={(event) => setData({ ...data, content: event.target.value })}
-        />
-        <br />
-        <button type="submit">Editar</button>
-      </form>
+      <div className="container-edit">
+        <h1 className="container-edit__title">Editar datos</h1>
+        <form
+          className="container-edit__form"
+          onSubmit={editarDatos}
+        >
+          <input
+            className="effecto-edit"
+            id="title"
+            value={data.title}
+            onChange={(event) => setData({ ...data, title: event.target.value })}
+          />
+          <textarea
+            className="effecto-edit"
+            id="content"
+            rows={10}
+            value={data.content}
+            onChange={(event) => setData({ ...data, content: event.target.value })}
+          />
+          <button
+            className="container-edit__form-primary effecto-edit"
+            type="submit"
+          >Editar</button>
+          <button
+            className="container-edit__form-second effecto-edit"
+            onClick={() => navigate('/blog')}
+          >Volver</button>
+        </form>
+      </div>
     </>
   )
 }

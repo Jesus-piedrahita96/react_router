@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuth, useCrud } from "./auth";
+import '../css/post.css'
 
 function PostView() {
   const auth = useAuth()
@@ -24,38 +25,48 @@ function PostView() {
 
   return (
     <>
-      <h2>Crear un nuevo blog page</h2>
-      <form onSubmit={onAdd}>
-        <input
-          value={datos.title}
-          onChange={(event) => {
-            setDatos({
-              ...datos,
-              title: event.target.value
-            })
-          }}
-          placeholder="Titulo" />
-        <input
-          value={datos.content}
-          onChange={(event) => {
-            setDatos({
-              ...datos,
-              content: event.target.value
-            })
-          }}
-          placeholder="Description" />
-        <input
-          value={datos.slug}
-          onChange={(event) => {
-            setDatos({
-              ...datos,
-              slug: event.target.value
-            })
-          }}
-          placeholder="Direccion del page" />
-        <br />
-        <button type="submit">Crear</button>
-      </form>
+      <div className="contain">
+        <div className="contain-post">
+          <h1>Crear un nuevo blog page</h1>
+          <form className="contain-post__form" onSubmit={onAdd}>
+            <input
+              className="contain-post__form-effect"
+              value={datos.title}
+              onChange={(event) => {
+                setDatos({
+                  ...datos,
+                  title: event.target.value
+                })
+              }}
+              placeholder="Titulo" />
+            <input
+              className="contain-post__form-effect"
+              value={datos.content}
+              onChange={(event) => {
+                setDatos({
+                  ...datos,
+                  content: event.target.value
+                })
+              }}
+              placeholder="Description" />
+            <input
+              className="contain-post__form-effect"
+              value={datos.slug}
+              onChange={(event) => {
+                setDatos({
+                  ...datos,
+                  slug: event.target.value
+                })
+              }}
+              placeholder="Direccion del page" />
+            <br />
+            <button
+              className="contain-post__form-buttom"
+              type="submit">Crear</button
+            >
+          </form>
+        </div>
+      </div>
     </>
   )
 }

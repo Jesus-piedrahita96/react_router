@@ -4,7 +4,10 @@
                 -20px -20px 60px #c3f6ff;
   --hover-button: rgb(154, 154, 248);
   --active-button: blue;
-
+  --hover-second: rgb(195, 190, 190);
+  --active-second: gray;
+  --hover-danger: rgb(255, 98, 98);
+  --active-danger: red;
 }
 
 body {
