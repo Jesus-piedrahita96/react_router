@@ -1,28 +1,22 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useAuth, useCrud } from "./auth";
-import ModalMenuMobile from './ModalMenuMobile';
-import { MenuMobile } from './MenuMobile';
+import React from 'react'
+import { useAuth } from './auth'
+import { NavLink } from 'react-router-dom'
 
-import '../css/menu.css';
+import '../css/menu-mobil.css'
 
-function Menu() {
+
+function MenuMobile() {
   const auth = useAuth()
-  const crud = useCrud()
-
-  const onMenuMobile = () => {
-    crud.setModal(!crud.modal)
-  }
 
   return (
     <>
-      <nav className="container">
-        <span onClick={onMenuMobile} className="container-icon"></span>
-        <ul className="container-list">
+      <nav className="container-mobil">
+        <ul className="container-mobil__list">
           {routes.map(route => {
             if (!route.private && !auth.user) {
               return (
                 <li
+                  className='container-mobil__list-item'
                   key={routes.indexOf(route)}
                 >
                   <NavLink
@@ -52,11 +46,6 @@ function Menu() {
           })}
         </ul>
       </nav>
-      {crud.modal && (
-        <ModalMenuMobile>
-          <MenuMobile />
-        </ModalMenuMobile>
-      )}
     </>
   )
 }
@@ -70,4 +59,4 @@ const routes = [
   { to: '/post', text: 'Post', private: true }
 ]
 
-export { Menu }
+export { MenuMobile }

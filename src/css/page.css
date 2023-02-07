@@ -3,7 +3,7 @@
 .container-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 90vh;
+  height: 60vh;
 }
 
 .container-page__main {

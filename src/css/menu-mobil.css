@@ -1,0 +1,47 @@
+@import './index.css';
+
+.container-mobil {
+  position: relative;
+  height: 0px;
+  width: 100%;
+}
+
+.container-mobil__list{
+  margin: 0;
+  padding: 0 10px;
+  height: 90vh;
+  width: 100%;
+  position: absolute;
+  top: -390px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 15px;
+  list-style: none;
+  box-sizing: border-box;
+  opacity: 0;
+  animation-name: telon;
+  animation-duration: 20s;
+}
+
+@keyframes telon {
+
+  15%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@media (min-width: 500px) {
+  .container-mobil {
+    opacity: 0;
+  }
+}

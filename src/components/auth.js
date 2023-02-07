@@ -15,7 +15,9 @@ function AuthProvaider(props) {
   } = useLocalStorage('DATA_V1', [])
 
   const navigate = useNavigate()
+
   const [ user, setUser ] = React.useState(null)
+  const [ modal, setModal ] = React.useState(false)
 
   const authLogin = (user) => {
     const isAdmin = adminList.find(admin => admin === user)
@@ -57,19 +59,19 @@ function AuthProvaider(props) {
   //Update data
   const editData = (datosNuevos) => {
     const index = statu.data.findIndex(data => data.slug === datosNuevos.slug)
-    const aux = [...statu.data]
-    if (aux[index]) {
-      aux[index].title = datosNuevos.title
-      aux[index].content = datosNuevos.content
+    const aux = [ ...statu.data ]
+    if (aux[ index ]) {
+      aux[ index ].title = datosNuevos.title
+      aux[ index ].content = datosNuevos.content
       saveData(aux)
       alert('Datos midificado con exito')
-    }else{
+    } else {
       alert('Error al intentar modificar los datos')
     }
   }
 
   const auth = { user, authLogin, authLogout }
-  const crud = { creatNewData, deleteData, editData }
+  const crud = { creatNewData, deleteData, editData, modal, setModal }
 
   return (
     <AuthContext.Provider

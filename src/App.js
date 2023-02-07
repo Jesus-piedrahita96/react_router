@@ -8,11 +8,13 @@ import { BlogPost } from './components/BlogPost';
 import { Login } from './components/Login';
 import { Logout } from './components/Logout';
 import { AuthProvaider, AuthRouter } from './components/auth';
-import './css/App.css';
 import { PostView } from './components/PostView';
 import { Edit } from './components/Edit';
 
+import './css/App.css';
+
 function App() {
+
   return (
     <>
       <HashRouter>

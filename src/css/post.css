@@ -1,7 +1,7 @@
 @import './index.css';
 
 .contain {
-  height: 90vh;
+  height: 60vh;
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
 }

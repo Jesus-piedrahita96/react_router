@@ -28,8 +28,7 @@
   .container-logout {
     grid-template-columns: auto 1fr;
     align-items: center;
-    height: 35vh;
-    margin-top: 100px;
+    height: 60vh;
   }
 
   .container-logout__image {
