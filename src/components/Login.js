@@ -2,6 +2,8 @@ import React from "react";
 import { useAuth, useDataJson } from "./auth";
 import '../css/global.css'
 
+import swal from "sweetalert";
+
 function Login() {
   //consumiendo variable global
   const auth = useAuth()
@@ -13,12 +15,16 @@ function Login() {
   // acciones
   const cambiar = (event) => {
     setState(event.target.value)
-    // console.log(event.target.value)
   }
 
   const enviar = (event) => {
+    swal({
+      text: 'bienvenido',
+      buttons: false,
+      icon: 'success',
+      timer: 2000
+    })
     event.preventDefault()
-    // console.log(`formulario: ${state}`)
     auth.authLogin(state)
   }
 

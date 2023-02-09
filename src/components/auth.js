@@ -3,12 +3,17 @@ import React from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./useLocalStorage";
 
+import '../css/global.css'
+
+import swal from "sweetalert";
+
 //declaracion de variables
 const AuthContext = React.createContext()
 const adminList = [ 'jesus', 'mauricio' ]
 
 //funcion principal
 function AuthProvaider(props) {
+
   const {
     statu,
     saveData
@@ -40,6 +45,12 @@ function AuthProvaider(props) {
       auth: data.auth
     })
     saveData(aux)
+    swal({
+      title:'Creado con exito',
+      icon: 'success',
+      buttons: false,
+      timer: 2000
+    })
   }
 
   //Eliminar un post
@@ -49,7 +60,6 @@ function AuthProvaider(props) {
     if (aux[ indice ].auth === user.user || user.isAdmin) {
       aux.splice(indice, 1)
       saveData(aux)
-      alert('Datos eliminados correctamente')
       navigate('/blog')
     } else {
       alert('Error al eliminar los datos...')
@@ -64,7 +74,14 @@ function AuthProvaider(props) {
       aux[ index ].title = datosNuevos.title
       aux[ index ].content = datosNuevos.content
       saveData(aux)
-      alert('Datos midificado con exito')
+      swal({
+        title: 'Editar Post',
+        text: 'operacion con exito',
+        icon: 'success',
+        className: 'success-rgb',
+        buttons: false,
+        timer: 2000
+      })
     } else {
       alert('Error al intentar modificar los datos')
     }

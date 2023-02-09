@@ -105,6 +105,11 @@
   justify-self: start;
 }
 
+.success-rgb {
+  /* background-color: rgba(43, 165, 137, 0.45); */
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.13);
+}
+
 @media(max-width: 500px) {
   .contain-home {
     width: 300px;

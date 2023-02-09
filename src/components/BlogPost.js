@@ -1,7 +1,8 @@
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { resolvePath, useNavigate, useParams } from "react-router-dom";
 import { useAuth, useCrud, useDataJson } from "./auth";
 import '../css/page.css';
+import swal from "sweetalert";
 
 function BlogPost() {
   const localStorageData = useDataJson()
@@ -17,7 +18,36 @@ function BlogPost() {
   }
 
   const deletePost = () => {
-    crud.deleteData(datos.slug)
+    swal({
+      title: 'Delete',
+      text: 'Seguro quiere eliminar el post',
+      icon: 'warning',
+      buttons: {
+        cancel: {
+          text: 'cancelar',
+          value: false,
+          visible: true,
+          className: 'effect second'
+        },
+        confirm: {
+          text: 'aceptar',
+          value: true,
+          visible: true,
+          className: 'effect primary'
+        }
+      }
+    }).then(response => {
+      if (response) {
+        crud.deleteData(datos.slug)
+        swal({
+          text: 'eliminado con exito',
+          icon: 'success',
+          timer: 2000,
+          className: 'success-rgb',
+          buttons: false
+        })
+      }
+    })
   }
 
   const editPost = () => {

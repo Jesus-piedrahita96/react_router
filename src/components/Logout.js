@@ -2,10 +2,18 @@ import React from "react";
 import { useAuth } from "./auth";
 import '../css/logout.css'
 
+import swal from "sweetalert";
+
 function Logout() {
   const auth = useAuth()
 
   const back = () => {
+    swal({
+      text: 'Vuelva pronto',
+      buttons: false,
+      icon: 'success',
+      timer: 2000
+    })
     auth.authLogout()
   }
   return (
