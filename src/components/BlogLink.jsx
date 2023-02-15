@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function BlogLink(props) {
   return (
@@ -12,9 +12,6 @@ function BlogLink(props) {
       >
         {props.post.title}
       </NavLink>
-      {/* <Link
-        to={`/blog/${props.post.slug}`}
-      >{props.post.title}</Link> */}
     </li>
   )
 }

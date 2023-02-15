@@ -6,6 +6,9 @@ import { useLocalStorage } from "./useLocalStorage";
 import '../css/global.css'
 
 import swal from "sweetalert";
+import { usePostApi } from "../hooks/usePostApi";
+import { usePutApi } from "../hooks/usePutApi";
+import { useDeleteApi } from "../hooks/useDeleteApi";
 
 //declaracion de variables
 const AuthContext = React.createContext()
@@ -13,11 +16,15 @@ const adminList = [ 'jesus', 'mauricio' ]
 
 //funcion principal
 function AuthProvaider(props) {
+  const API = 'http://localhost:8000/api/post/'
+  const post = usePostApi(API)
+  const update = usePutApi(API)
+  const borrar = useDeleteApi(API)
 
   const {
     statu,
     saveData
-  } = useLocalStorage('DATA_V1', [])
+  } = useLocalStorage('DATA_V2', [])
 
   const navigate = useNavigate()
 
@@ -44,9 +51,11 @@ function AuthProvaider(props) {
       content: data.content,
       auth: data.auth
     })
+    post.postPost(data)
     saveData(aux)
     swal({
-      title:'Creado con exito',
+      title:'Creacion de post',
+      text: 'exito al crear',
       icon: 'success',
       buttons: false,
       timer: 2000
@@ -54,12 +63,13 @@ function AuthProvaider(props) {
   }
 
   //Eliminar un post
-  const deleteData = (slug) => {
-    const indice = statu.data.findIndex(dato => dato.slug === slug)
+  const deleteData = (id) => {
+    const indice = statu.data.findIndex(dato => dato.id === id)
     const aux = [ ...statu.data ]
     if (aux[ indice ].auth === user.user || user.isAdmin) {
       aux.splice(indice, 1)
       saveData(aux)
+      borrar.deletePost(id)
       navigate('/blog')
     } else {
       alert('Error al eliminar los datos...')
@@ -74,6 +84,7 @@ function AuthProvaider(props) {
       aux[ index ].title = datosNuevos.title
       aux[ index ].content = datosNuevos.content
       saveData(aux)
+      update.putPost(datosNuevos, datosNuevos.id)
       swal({
         title: 'Editar Post',
         text: 'operacion con exito',

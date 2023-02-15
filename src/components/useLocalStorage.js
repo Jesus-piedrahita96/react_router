@@ -1,12 +1,21 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import {useGetApi} from '../hooks/useGetApi'
 
 function useLocalStorage(nameData, initialValue) {
+  const API = 'http://localhost:8000/api/post/'
+  const dataGet = useGetApi(API)
+
+
   //estado compuesto
   const [ statu, setStatu ] = React.useState({
     loading: true,
     error: false,
     data: initialValue
   })
+
+  React.useEffect(() => {
+    saveData(dataGet)
+  }, [dataGet])
 
   //guardar datos en el localStorage y actualizar la info de los estados
   const saveData = (newData) => {
@@ -33,7 +42,7 @@ function useLocalStorage(nameData, initialValue) {
         const localStorageData = localStorage.getItem(nameData, initialValue)
         if (!localStorageData) {
           localStorage.setItem(nameData, JSON.stringify(initialValue))
-          localData = initialValue
+          localData = []
         } else {
           localData = JSON.parse(localStorageData)
         }

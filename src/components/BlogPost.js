@@ -1,5 +1,5 @@
 import React from "react";
-import { resolvePath, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAuth, useCrud, useDataJson } from "./auth";
 import '../css/page.css';
 import swal from "sweetalert";
@@ -22,6 +22,7 @@ function BlogPost() {
       title: 'Delete',
       text: 'Seguro quiere eliminar el post',
       icon: 'warning',
+      dangerMode: true,
       buttons: {
         cancel: {
           text: 'cancelar',
@@ -38,7 +39,7 @@ function BlogPost() {
       }
     }).then(response => {
       if (response) {
-        crud.deleteData(datos.slug)
+        crud.deleteData(datos.id)
         swal({
           text: 'eliminado con exito',
           icon: 'success',
@@ -46,6 +47,7 @@ function BlogPost() {
           className: 'success-rgb',
           buttons: false
         })
+        back()
       }
     })
   }

@@ -14,8 +14,8 @@ function Page() {
         <div className="container-page__main">
           <h1>Blog Page</h1>
           <ul>
-            {datos.data.map((aux, index) => (
-              <BlogLink key={index} post={aux} />
+            {datos.data.map((aux) => (
+              <BlogLink key={aux.id} post={aux} />
             ))}
           </ul>
         </div>

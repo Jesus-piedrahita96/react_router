@@ -11,6 +11,7 @@ function Edit() {
   const crud = useCrud()
   const equalData = localDataStorage.data.find(datos => datos.slug === dataRuta)
   const [ data, setData ] = React.useState({
+    id: equalData.id,
     title: equalData.title,
     slug: equalData.slug,
     content: equalData.content,

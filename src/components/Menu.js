@@ -5,10 +5,14 @@ import ModalMenuMobile from './ModalMenuMobile';
 import { MenuMobile } from './MenuMobile';
 
 import '../css/menu.css';
+import { useGetApi } from "../hooks/useGetApi";
 
 function Menu() {
+  const APIMENU = 'http://localhost:8000/api/menu/'
   const auth = useAuth()
   const crud = useCrud()
+  const menu = useGetApi(APIMENU)
+  //* console.log(menu)
 
   const onMenuMobile = () => {
     crud.setModal(!crud.modal)
@@ -19,11 +23,11 @@ function Menu() {
       <nav className="container">
         <span onClick={onMenuMobile} className="container-icon"></span>
         <ul className="container-list">
-          {routes.map(route => {
+          {menu.map(route => {
             if (!route.private && !auth.user) {
               return (
                 <li
-                  key={routes.indexOf(route)}
+                  key={route.id}
                 >
                   <NavLink
                     style={({ isActive }) => ({
@@ -37,7 +41,7 @@ function Menu() {
               )
             } else if (route.private && auth.user) {
               return (
-                <li key={routes.indexOf(route)}>
+                <li key={route.id}>
                   <NavLink
                     style={({ isActive }) => ({
                       color: isActive ? 'blue' : 'black'
@@ -61,13 +65,13 @@ function Menu() {
   )
 }
 
-const routes = [
-  { to: '/', text: 'Home', private: false },
-  { to: '/blog', text: 'Page', private: true },
-  { to: '/login', text: 'Login', private: false },
-  { to: '/logout', text: 'Logout', private: true },
-  { to: '/profile', text: 'Profile', private: true },
-  { to: '/post', text: 'Post', private: true }
-]
+// const routes = [
+//   { to: '/', text: 'Home', private: false },
+//   { to: '/blog', text: 'Page', private: true },
+//   { to: '/login', text: 'Login', private: false },
+//   { to: '/logout', text: 'Logout', private: true },
+//   { to: '/profile', text: 'Profile', private: true },
+//   { to: '/post', text: 'Post', private: true }
+// ]
 
 export { Menu }

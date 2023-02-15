@@ -1,5 +1,5 @@
 import React from "react";
-import { useAuth, useDataJson } from "./auth";
+import { useAuth } from "./auth";
 import '../css/global.css'
 
 import swal from "sweetalert";
@@ -7,7 +7,6 @@ import swal from "sweetalert";
 function Login() {
   //consumiendo variable global
   const auth = useAuth()
-  const localStorageData = useDataJson()
 
   //estado simple
   const [ state, setState ] = React.useState('')
@@ -43,7 +42,7 @@ function Login() {
               className="effect"
               value={state}
               onChange={cambiar}
-              placeholder="dijite el password"
+              placeholder="dijite el avatar"
             />
             <button className="effect primary" type="submit">Entrar</button>
           </div>
